@@ -56,7 +56,7 @@ const Login = () => {
             </form>
             <p className="my-5">New Music hub ? <Link to={"/signup"} className="underline text-accent">Create Account.</Link></p>
             <div className="divider">OR</div>
-            {/* <SocialLogin></SocialLogin> */}
+            <SocialLogin></SocialLogin>
         </div>
     </div>
   );

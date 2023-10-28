@@ -59,8 +59,7 @@ const SignUp = () => {
                                     email: data?.email,
                                     role: "student",
                                 };
-                                axios
-                                    .post("http://localhost:5000/user", newUser)
+                                axios.post("http://localhost:5000/user", newUser)
                                     .then(() => {
                                         Swal.fire({
                                             icon: "success",
