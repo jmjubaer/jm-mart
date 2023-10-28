@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =============Common CSS =============== */
+.container {
+  @apply w-[1440px] max-w-[96%] mx-auto
+}
+
+.jm_input{
+  @apply w-full py-4 px-5 my-3 rounded-3xl bg-[#A975FF] bg-opacity-100  placeholder:text-[#fff] focus:bg-[#6C76C7] text-white text-lg
+}
+.jm_btn{
+  @apply bg-gradient-to-r from-[#35CFFB] to-[#D774FF] text-xl uppercase text-white py-4 px-8 mt-5 cursor-pointer
+  } 
+/* .jm_input_white{
+  @apply w-full py-3 px-5 my-3 rounded-3xl bg-[#fff] bg-opacity-80  placeholder:text-main
+}
+
+.btn_disabled{
+@apply disabled:bg-gradient-to-r disabled:from-secondery disabled:to-secondery disabled:text-opacity-60 disabled:cursor-not-allowed
+}
+.jm_btn-tiny{
+@apply bg-gradient-to-r from-main to-secondery text-xl uppercase text-white py-3 px-6 mt-5 cursor-pointer
+}
+.jm_btn_outline{
+@apply border-2 p-3 mt-5 cursor-pointer rounded-md uppercase
+} */
+
+
+
+/* ======================= NavBar ============= */
+
+.jm_nav{
+  @apply block lg:flex justify-between lg:col-span-3 items-center absolute lg:static lg:w-auto top-0 left-0 overflow-hidden h-screen lg:h-auto duration-500 bg-[#fff] lg:bg-[transparent] lg:p-0 z-50
+}
