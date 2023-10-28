@@ -12,7 +12,7 @@
   @apply w-full py-4 px-5 my-3 rounded-3xl bg-[#A975FF] bg-opacity-100  placeholder:text-[#fff] focus:bg-[#6C76C7] text-white text-lg
 }
 .jm_btn{
-  @apply bg-gradient-to-r from-[#35CFFB] to-[#D774FF] text-xl uppercase text-white py-4 px-8 mt-5 cursor-pointer
+  @apply bg-gradient-to-r from-[#35CFFB] to-[#D774FF] text-xl uppercase text-white py-4 px-8 mt-5 cursor-pointer rounded-lg
   } 
 /* .jm_input_white{
   @apply w-full py-3 px-5 my-3 rounded-3xl bg-[#fff] bg-opacity-80  placeholder:text-main
