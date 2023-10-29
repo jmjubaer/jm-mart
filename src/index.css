@@ -12,8 +12,19 @@
   @apply w-full py-4 px-5 my-3 rounded-3xl bg-[#A975FF] bg-opacity-100  placeholder:text-[#fff] focus:bg-[#6C76C7] text-white text-lg
 }
 .jm_btn{
-  @apply bg-gradient-to-r from-[#35CFFB] to-[#D774FF] text-xl uppercase text-white py-4 px-8 mt-5 cursor-pointer rounded-lg
+  @apply bg-gradient-to-r from-[#35CFFB] to-[#D774FF] text-xl uppercase text-white py-4 px-8 cursor-pointer rounded-lg
   } 
+.jm_btn-tiny{
+  @apply bg-gradient-to-r from-[#35CFFB] to-[#D774FF] text-lg text-white py-3 px-8 cursor-pointer rounded-3xl
+  } 
+
+  .gradient_text{
+    background: linear-gradient(123deg, #1C99FE 20.69%, #7644FF 50.19%, #FD4766 79.69%);
+    background-clip:text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
 /* .jm_input_white{
   @apply w-full py-3 px-5 my-3 rounded-3xl bg-[#fff] bg-opacity-80  placeholder:text-main
 }
