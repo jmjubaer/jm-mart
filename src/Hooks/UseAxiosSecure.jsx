@@ -17,7 +17,7 @@ const useAxiosSecured = () => {
             }
             return request;
         });
-    }, [logout, navigate, axiosSecured]);
+    }, [logout, navigate]);
     return { axiosSecured };
 };
 

@@ -47,7 +47,7 @@ const Navbar = () => {
 											<FaAngleRight />
 										</button>
 									</div>
-								)}
+					)}
                 </div>
             </nav>
         </div>

@@ -10,6 +10,7 @@ import HomePage from './Pages/Home/HomePage'
 import Account from './Pages/Account/Account'
 import Collection from './Pages/Account/Collection'
 import { ToastContainer } from 'react-toastify'
+import AddProduct from './Pages/Account/AddProduct'
 
 const routes = createBrowserRouter([
   {
@@ -37,7 +38,11 @@ const routes = createBrowserRouter([
       {
         path: "/account",
         element: <Collection></Collection>
-      }
+      },
+      {
+        path: "/account/addproducts",
+        element: <AddProduct></AddProduct>
+      },
     ]
   }
 ])
