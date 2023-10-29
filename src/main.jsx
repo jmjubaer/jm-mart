@@ -7,6 +7,8 @@ import Login from './Authentication/Login'
 import SignUp from './Authentication/SignUp'
 import AuthProvider from './Provider/AuthProvider'
 import HomePage from './Pages/Home/HomePage'
+import Account from './Pages/Account/Account'
+import Collection from './Pages/Account/Collection'
 
 const routes = createBrowserRouter([
   {
@@ -25,6 +27,16 @@ const routes = createBrowserRouter([
         path: "/signup",
         element: <SignUp></SignUp>
       },
+    ]
+  },
+  {
+    path: "/account",
+    element: <Account></Account>,
+    children: [
+      {
+        path: "/account",
+        element: <Collection></Collection>
+      }
     ]
   }
 ])

@@ -50,25 +50,25 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
             setUser(loggedUser);
-            // if (loggedUser) {
-            //     axios
-            //         .post("http://localhost:5000/jwt", {
-            //             email: loggedUser.email,
-            //         })
-            //         .then((res) => {
-            //             localStorage.setItem(
-            //                 "music-hub-token",
-            //                 res?.data?.token
-            //             );
-            //             setLoading(false);
-            //         })
-            //         .catch(function (error) {
-            //             console.log(error);
-            //         });
-            // } else {
-            //     localStorage.removeItem("music-hub-token");
-            //     setLoading(false);
-            // }
+            if (loggedUser) {
+                axios
+                    .post("http://localhost:5000/jwt", {
+                        email: loggedUser.email,
+                    })
+                    .then((res) => {
+                        localStorage.setItem(
+                            "jm-mart-token",
+                            res?.data?.token
+                        );
+                        setLoading(false);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            } else {
+                localStorage.removeItem("jm-mart-token");
+                setLoading(false);
+            }
         });
         return () => {
             unSubscribe();

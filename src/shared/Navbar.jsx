@@ -7,7 +7,11 @@ import { FaAngleRight } from "react-icons/fa";
 
 const Navbar = () => {
 	const [condition, setCondition] = useState(false);
-    const {user} = UserAuth()
+    const {user,logout} = UserAuth() ;
+    const handleLogOut = () => {
+        logout()
+        setCondition(false)
+    }
     return (
         <div className=" py-3 border-b-2">
             <nav className='flex container justify-between'>
@@ -28,7 +32,7 @@ const Navbar = () => {
                     {condition && (
 									<div className="w-60 top-16 right-0 h-fit absolute z-50 overflow-hidden bg-white border rounded-lg">
 										<Link
-											href={'/my-account'}
+											to={'/account'}
 											onClick={() => setCondition(false)}
 											className={`hover:bg-slate-200 flex items-center justify-between w-full px-5 py-3 font-semibold text-left duration-200`}
 										>
@@ -36,7 +40,7 @@ const Navbar = () => {
 											<FaAngleRight />
 										</Link>
 										<button
-											// onClick={handleLogOut}
+											onClick={handleLogOut}
 											className="hover:bg-slate-200 flex items-center justify-between w-full px-5 py-3 font-semibold text-left"
 										>
 											<span>Log out</span>

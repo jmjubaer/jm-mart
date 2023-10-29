@@ -25,6 +25,13 @@
     color: transparent;
     -webkit-text-fill-color: transparent;
   }
+  .bg_image {
+    background: url('./assets/prrofile_bg.png');
+    background-size: cover;
+  }
+  
+
+
 /* .jm_input_white{
   @apply w-full py-3 px-5 my-3 rounded-3xl bg-[#fff] bg-opacity-80  placeholder:text-main
 }
@@ -45,4 +52,28 @@
 
 .jm_nav{
   @apply block lg:flex justify-between lg:col-span-3 items-center absolute lg:static lg:w-auto top-0 left-0 overflow-hidden h-screen lg:h-auto duration-500 bg-[#fff] lg:bg-[transparent] lg:p-0 z-50
+}
+
+
+/* ===================React Tab ======================= */
+.react-tabs__tab-list{
+  border: none !important;
+  width: fit-content !important;
+  margin: 0 auto !important;
+}
+.react-tabs__tab--selected{
+  background: linear-gradient(to right,#35CFFB,#D774FF) !important;
+  color: #fff !important;
+}
+.react-tabs__tab--selected::after{
+  display: none !important;
+}
+.react-tabs__tab{
+  padding: 10px 30px !important; 
+  border: 2px solid #D774FF !important;
+  margin: 0px 20px;
+  border-radius: 10px !important;
+  font-size: 21px;
+  text-transform: capitalize;
+  font-weight: 600;
 }
