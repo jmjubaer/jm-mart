@@ -1,7 +1,14 @@
 /* eslint-disable react/prop-types */
-import { FaHistory } from "react-icons/fa";
+import { useTimer } from 'react-timer-hook';
 const ProductsCard = ({product}) => {
-    const {itemName,expireDate,startDate,itemImage,currentBid,ownerName,ownerPhoto} = product || {};
+    const {itemName,expireDate,itemImage,currentBid,ownerName,ownerPhoto} = product || {};
+    const expiryTimestamp = new Date(expireDate)
+    const {
+        seconds,
+        minutes,
+        hours,
+        days
+      } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
     return (
         <div className="border-2 border-[#8E9DFD] rounded-xl p-5">
             <img src={itemImage} alt="Item Image" className="rounded-xl" />
@@ -17,7 +24,7 @@ const ProductsCard = ({product}) => {
                     <h4 className="text-lg font-medium">{ownerName}</h4>
                 </div>
                 <div className="p-2 px-3 rounded-xl text-white font-bold bg-[#9054B7]">
-                    <p>1W: 1D: 1h: 5m: 55s</p>
+                        <span>{days}d</span>: <span>{hours}h</span>: <span>{minutes}m</span>: <span>{seconds}s</span>
                 </div>
             </div>
             <div className="border-t-2 mt-2 pt-3 flex justify-between">
