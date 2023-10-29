@@ -1,6 +1,22 @@
+import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import useAxiosSecured from '../../Hooks/UseAxiosSecure';
+import MyProductCard from '../../Components/MyProductCard';
+import { UserAuth } from '../../Provider/AuthProvider';
 const Collection = () => {
+    const {axiosSecured} = useAxiosSecured();
+    const [myProducts, setMyProducts] = useState([]); 
+    const {user} = UserAuth();
+    // const [collection,setCollection] = useState([]);
+
+    useEffect(()=> {
+        (async () => {
+            const getMyProduct = await axiosSecured(`/myproducts?email=${user?.email}`);
+            setMyProducts(getMyProduct?.data)
+        })()
+    },[axiosSecured,user?.email])
+    console.log(myProducts);
     return (
         <div className="my-10">
         <Tabs>
@@ -10,7 +26,11 @@ const Collection = () => {
             </TabList>
 
             <TabPanel>
-                <h2>Any content 1</h2>
+                <div className="grid grid-cols-3 gap-7 mt-8">
+                {
+                    myProducts.map(product => <MyProductCard product={product} key={product?._id}></MyProductCard>)
+                }
+                </div>
             </TabPanel>
             <TabPanel>
                 <div className=" container overflow-hidden">

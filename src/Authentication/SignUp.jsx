@@ -26,15 +26,15 @@ const SignUp = () => {
             toast("Password Must be at least 6 characters");
             return;
         }
-        if (!/(?=.*[A-Z])/.test(data?.password)) {
-            toast("Password Must have a capital letter");
-            return;
-        }
+        // if (!/(?=.*[A-Z])/.test(data?.password)) {
+        //     toast("Password Must have a capital letter");
+        //     return;
+        // }
 
-        if (!/^(?=.*[!@#$&*])/.test(data?.password)) {
-            toast("Password Must have a special character");
-            return;
-        }
+        // if (!/^(?=.*[!@#$&*])/.test(data?.password)) {
+        //     toast("Password Must have a special character");
+        //     return;
+        // }
 
         const formData = new FormData();
         formData.append("image", data.image[0]);

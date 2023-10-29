@@ -1,15 +1,9 @@
-import { useEffect } from "react";
 import { UserAuth } from "../../Provider/AuthProvider";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { Outlet } from "react-router-dom";
 const Account = () => {
     const {user} = UserAuth();
-    // const [collection,setCollection] = useState([]);
-    useEffect(()=> {
-        (async () => {
 
-        })()
-    },[])
     return (
         <div className="bg-slate-300 ">
             <div className="bg_image h-80">
