@@ -3,6 +3,7 @@ import { useTimer } from 'react-timer-hook';
 import useAxiosSecured from '../Hooks/UseAxiosSecure';
 import Swal from 'sweetalert2';
 import { FaTrashAlt } from 'react-icons/fa';
+import UseGetMyProducts from '../Hooks/UseGetMyProducts';
 const MyProductCard = ({product}) => {
     const {axiosSecured} = useAxiosSecured();
     const {itemName,expireDate,itemImage,currentBid,_id} = product || {};
@@ -13,7 +14,7 @@ const MyProductCard = ({product}) => {
         hours,
         days
       } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
-
+      const {refetch} = UseGetMyProducts()
       const handleDelete = async() => {
         const deleteRes = await axiosSecured.delete(`/myproducts/${_id}`);
         console.log(deleteRes);
@@ -24,6 +25,7 @@ const MyProductCard = ({product}) => {
                 showConfirmButton: false,
                 timer: 1500,
             });
+            refetch();
         }
       }
     return (

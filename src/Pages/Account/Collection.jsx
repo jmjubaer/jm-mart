@@ -1,22 +1,10 @@
-import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import useAxiosSecured from '../../Hooks/UseAxiosSecure';
 import MyProductCard from '../../Components/MyProductCard';
-import { UserAuth } from '../../Provider/AuthProvider';
+import UseGetMyProducts from '../../Hooks/UseGetMyProducts';
 const Collection = () => {
-    const {axiosSecured} = useAxiosSecured();
-    const [myProducts, setMyProducts] = useState([]); 
-    const {user} = UserAuth();
-    // const [collection,setCollection] = useState([]);
+    const {myProducts} = UseGetMyProducts()
 
-    useEffect(()=> {
-        (async () => {
-            const getMyProduct = await axiosSecured(`/myproducts?email=${user?.email}`);
-            setMyProducts(getMyProduct?.data)
-        })()
-    },[axiosSecured,user?.email])
-    console.log(myProducts);
     return (
         <div className="py-10 overflow-hidden">
         <Tabs>
