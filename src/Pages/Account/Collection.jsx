@@ -18,7 +18,7 @@ const Collection = () => {
     },[axiosSecured,user?.email])
     console.log(myProducts);
     return (
-        <div className="my-10">
+        <div className="py-10 overflow-hidden">
         <Tabs>
             <TabList>
                 <Tab>My Products</Tab>

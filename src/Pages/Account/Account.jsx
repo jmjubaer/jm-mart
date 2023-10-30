@@ -21,6 +21,14 @@ const Account = () => {
                     {condition && (
 									<div className="w-60 top-24 shadow-lg right-0 h-fit absolute z-50 overflow-hidden bg-white border rounded-lg">
 										<Link
+											to={'/account'}
+                                            onClick={() => setCondition(false)}
+											className={`hover:bg-slate-200 flex items-center justify-between w-full px-5 py-3 font-semibold text-left duration-200`}
+										>
+											<span>My Collection</span>
+											<FaAngleRight />
+										</Link>
+										<Link
 											to={'/account/addproducts'}
                                             onClick={() => setCondition(false)}
 											className={`hover:bg-slate-200 flex items-center justify-between w-full px-5 py-3 font-semibold text-left duration-200`}
